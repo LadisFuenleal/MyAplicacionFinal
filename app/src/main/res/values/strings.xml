@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MyAplicacionFinal</string>
+    <string name="usuario_label">Usuario</string>
+    <string name="contra_label">Contraseña</string>
+    <string name="olvcontraseña">Olvide mi contraseña</string>
+    <string name="login">Bienvenido</string>
+    <string name="registro">Bienvenido al Registro</string>
+    <string name="email">email</string>
+    <string name="conocer">¿Que campeon prefieres?</string>
+    <string name="amigos">Kaisa</string>
+    <string name="trabajo">Yone</string>
+    <string name="publicidad">Carlitos</string>
+    <string name="hombre">hombre</string>
+    <string name="mujer">mujer</string>
+    <string name="genero">Genero</string>
+    <string name="fec_nac">Fecha de nacimiento</string>
+    <string name="numero">Número celular</string>
+    <string name="in">55</string>
+    <string name="inicio_sesion">Iniciar sesión</string>
+    <string name="ladistech">L A D I S T E C H</string>
+    <string name="notificaciones">Notificaciones</string>
+    <string name="region">Región</string>
+    <string name="name">Nombre</string>
+    <string name="pick">pick</string>
+    <string name="w">Welcome to the jungle</string>
+</resources>
