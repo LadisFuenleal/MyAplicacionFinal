@@ -1,22 +1,30 @@
 package com.example.myaplicacionfinal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.example.myaplicacionfinal.MyAdapter.MyAdapter;
+import com.example.myaplicacionfinal.json.MyData;
 import com.example.myaplicacionfinal.json.MyInfo;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -47,14 +55,26 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
     public static boolean activado;
     public static String[] box = new String[3];
     public static List<MyInfo> list =new ArrayList<MyInfo>();
+    public static List<MyData> lista;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        //Contraseñas nuevas
+        lista= new ArrayList<>();
+        MyData myData=null;
+        /*for(int i=0;i<3;i++){
+            myData= new MyData();
+            myData.setContra(String.format("Contrasena %d" ,(int)(Math.random()*10000)));
+            myData.setUsuario(String.valueOf(i));
+            lista.add(myData);
+        }*/
         //Declaracion de widgets
+
         String [] opciones = {"Norte","Sur","Centro"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, opciones);
         spinner.setAdapter(adapter);
+
         button4 = findViewById(R.id.button4);
         Button button5 = findViewById(R.id.button5);
         usuario = findViewById(R.id.usuario);
@@ -136,6 +156,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
                                 Toast.makeText(getApplicationContext(), "El nombre de usuario está ocupado, cambialo", Toast.LENGTH_LONG).show();
                             }else{
                                 Metodos.fillInfo(info);
+                                info.setContras(lista);
                                 List2Json(info,list);
                             }
                         }

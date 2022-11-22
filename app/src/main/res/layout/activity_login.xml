@@ -4,29 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_login"
-    tools:ignore="ExtraText"><![CDATA[
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:background="@color/white"
+    tools:context=".activity_login">
 
-    ]]>
 
-    <EditText
-        android:id="@+id/user"
-        android:layout_width="300dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="228dp"
-        android:background="@drawable/edtext_bg"
-        android:ems="10"
-        android:hint="Usuario"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="371dp"
+        android:layout_height="600dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" >
 
-    <EditText
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/user"
+                android:layout_width="300dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/edtext_bg"
+                android:ems="10"
+                android:hint="@string/usuario_label"
+                android:inputType="textPersonName"
+                android:paddingStart="15dp"
+                android:textColorHint="#546E7A"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+            <EditText
                 android:id="@+id/pswds"
                 android:layout_width="300dp"
                 android:layout_height="55dp"
@@ -41,44 +54,43 @@
                 app:layout_constraintStart_toStartOf="@+id/user"
                 app:layout_constraintTop_toBottomOf="@+id/user" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/login"
-        android:textColor="@color/DarkBlue"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="164dp"
+                android:text="@string/login"
+                android:textColor="@color/DarkBlue"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="280dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/negro_proyecto"
-        android:elevation="6dp"
-        android:text="@string/login"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/pswds"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="@+id/pswds"
-        app:layout_constraintTop_toBottomOf="@+id/pswds" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="280dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/negro_proyecto"
+                android:elevation="6dp"
+                android:text="@string/login"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonM"
+                app:layout_constraintEnd_toEndOf="@+id/pswds"
+                app:layout_constraintStart_toStartOf="@+id/pswds"
+                app:layout_constraintTop_toBottomOf="@+id/pswds" />
 
-    <Button
-                android:id="@+id/button2"
+            <Button
+                android:id="@+id/buttonM"
                 android:layout_width="280dp"
                 android:layout_height="55dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/negro_proyecto"
-                android:elevation="6dp"
                 android:text="@string/registro"
+                android:elevation="6dp"
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toTopOf="@+id/button3"
                 app:layout_constraintEnd_toEndOf="@+id/button"
@@ -91,26 +103,51 @@
                 android:layout_height="55dp"
                 android:layout_marginBottom="20dp"
                 android:backgroundTint="@color/negro_proyecto"
-                android:elevation="6dp"
                 android:text="@string/olvcontraseña"
+                android:elevation="6dp"
                 app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/button2"
+                app:layout_constraintEnd_toEndOf="@+id/buttonM"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/button2"
-                app:layout_constraintTop_toBottomOf="@+id/button2" />
+                app:layout_constraintStart_toStartOf="@+id/buttonM"
+                app:layout_constraintTop_toBottomOf="@+id/buttonM" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="190dp"
-        android:layout_height="175dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        app:srcCompat="@drawable/user" />
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="125dp"
+                android:layout_height="132dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/user" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="210dp"
+                android:text="@string/usuario_label"
+                app:layout_constraintBottom_toTopOf="@+id/user"
+                app:layout_constraintEnd_toEndOf="@+id/user"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/user"
+                app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:text="Contraseña"
+                app:layout_constraintBottom_toTopOf="@+id/pswds"
+                app:layout_constraintEnd_toEndOf="@+id/pswds"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/pswds"
+                app:layout_constraintTop_toBottomOf="@+id/user" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
